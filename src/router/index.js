@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Defult from '../views/Defult.vue';
+// import Defult from '../views/Defult.vue';
 
 const routes = [
 	{
 		path: '/',
-		name: 'Defult',
-		component: Defult,
+		name: 'Relocate',
+		component: () =>
+			import(/* webpackChunkName: "about" */ '../views/Relocate.vue'),
 		meta: {
 			title: 'Tribal-Gateway - Home',
 		},
@@ -22,18 +23,18 @@ const routes = [
 			title: 'Tribal-Gateway - Resort Form',
 		},
 	},
-	{
-		path: '/relocate-form',
-		name: 'Relocate',
-		// route level code-splitting
-		// this generates a separate chunk (about.[hash].js) for this route
-		// which is lazy-loaded when the route is visited.
-		component: () =>
-			import(/* webpackChunkName: "about" */ '../views/Relocate.vue'),
-		meta: {
-			title: 'Tribal-Gateway - Relocate Form',
-		},
-	},
+	// {
+	// 	path: '/relocate-form',
+	// 	name: 'Relocate',
+	// 	// route level code-splitting
+	// 	// this generates a separate chunk (about.[hash].js) for this route
+	// 	// which is lazy-loaded when the route is visited.
+	// 	component: () =>
+	// 		import(/* webpackChunkName: "about" */ '../views/Relocate.vue'),
+	// 	meta: {
+	// 		title: 'Tribal-Gateway - Relocate Form',
+	// 	},
+	// },
 
 	{
 		path: '/about',
