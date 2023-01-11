@@ -1,7 +1,7 @@
 <script>
 // import Button from '../reusable/Button.vue';
 // export default { components: { Button } };
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 export default {
   name: "ContactForm",
@@ -16,69 +16,92 @@ export default {
       message: "",
     };
   },
-  methods: {
-    sendEmail(e) {
-      try {
-        emailjs.sendForm(
-          "service_mj9twxa",
-          "template_3zfxfj6",
-          e.target,
-          "udTUt8SyCLDlHBMC5",
-          {
-            from_name: this.from_name,
-            email: this.email,
-            subject: this.subject,
-            message: this.message,
-          }
-        );
-      } catch (error) {
-        console.log({ error });
-      }
-      // Reset form field
-      this.from_name = "";
-      this.email = "";
-      this.subject = "";
-      this.message = "";
-    },
-  },
+  methods: {},
 };
 </script>
 
 <template>
-  <div class="w-full md:w-1/2">
-    <div class="leading-loose max-w-xl text-left mt-20">
-      <!-- <p class="font-general-regular text-gray-500 text-md mb-8">
+  <div class="">
+    <!-- <p class="font-general-regular text-gray-500 text-md mb-8">
         Please fill out the form to create your custom package.
       </p> -->
-      <form ref="form" class="font-general-regular space-y-7" @submit.prevent="sendEmail">
+    <form
+      ref="form"
+      class="font-general-regular mx-10 md:mx-20"
+      @submit.prevent="sendEmail"
+    >
+      <p class="font-general-regular text-gray-500 text-md text-left mt-8 mb-4">
+        Personal Profile____________
+      </p>
+
+      <div
+        class="font-general-regular grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-8"
+      >
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name">Name </label>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="name"
+            >Surname Name
+          </label>
           <input
             class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
             id="name"
             name="name"
             type="text"
             required=""
-            placeholder="Your Name"
+            placeholder="Surname Name"
             aria-label="Name"
             v-model="from_name"
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="phone">Phone</label>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="name"
+            >First Name
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="First Name"
+            aria-label="Name"
+            v-model="from_name"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="name"
+            >Middle Name
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Middle Name"
+            aria-label="Name"
+            v-model="from_name"
+          />
+        </div>
+
+        <div>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="phone"
+            >TelePhone</label
+          >
           <input
             class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
             name="phone"
             type="text"
             required=""
-            placeholder="Your Mobile Number"
-            aria-label="phone"
+            placeholder="TelePhone"
+            aria-label="TelePhone"
             v-model="email"
           />
         </div>
 
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="email">Email</label>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="email"
+            >Email</label
+          >
           <input
             class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
             name="email"
@@ -90,191 +113,199 @@ export default {
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="subject"
-            >We like to join the TGW Group:
-          </label>
-
-          <div>
-            <div class="flex flex-cols-2 mb-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject"
-                >Yes (Mondays Only 9a-5p)
-              </label>
-            </div>
-            <div class="flex flex-cols-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject">
-                No, thank you
-              </label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label class="block text-lg text-primary-dark mb-2" for="subject"
-            >Personalized t-shirts are available.</label
-          >
-          <div>
-            <div class="flex flex-cols-2 mb-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject"
-                >Yes, t-shirts $30 each
-              </label>
-            </div>
-            <div class="flex flex-cols-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject">
-                No, thank you
-              </label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label class="block text-lg text-primary-dark mb-2" for="subject"
-            >TGW Cap</label
-          >
-          <div>
-            <div class="flex flex-cols-2 mb-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject"
-                >Yes, $25 each
-              </label>
-            </div>
-            <div class="flex flex-cols-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject">
-                No, thank you
-              </label>
-            </div>
-          </div>
-        </div>
-        <div>
-          <label class="block text-lg text-primary-dark mb-2" for="subject"
-            >TGW Sports Water Bottle</label
-          >
-          <div>
-            <div class="flex flex-cols-2 mb-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject"
-                >Yes, $25 each
-              </label>
-            </div>
-            <div class="flex flex-cols-2 gap-1">
-              <input
-                class="p-2 border border-primary-300 rounded-md ml-1"
-                name="subject"
-                type="radio"
-                required=""
-                placeholder="Subject"
-                aria-label="Subject"
-                v-model="subject"
-              />
-
-              <label class="block text-sm text-primary-dark mb-0" for="subject">
-                No, thank you
-              </label>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <label class="block text-lg text-primary-dark mb-2" for="subject"
-            >Subtotal:</label
-          >
-        </div>
-        <div>
-          <label class="block text-lg text-primary-dark mb-2" for="subject"
-            >LEKKI CONSERVATION CENTER with round-trip transportation: $</label
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="email"
+            >Age</label
           >
           <input
-            class="w-full px-5 py-2 border border-primary-300 border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
-            name="subject"
-            type="radio"
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            name=""
+            type="text"
             required=""
-            placeholder="Subject"
-            aria-label="Subject"
-            v-model="subject"
+            placeholder="Your Age"
+            aria-label=""
+            v-model="email"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="email"
+            >Nationality</label
+          >
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            name=""
+            type="text"
+            required=""
+            placeholder="Nationality"
+            aria-label=""
+            v-model="email"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="email"
+            >Marital Status</label
+          >
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            name=""
+            type="text"
+            required=""
+            placeholder="Marital Status"
+            aria-label=""
+            v-model="email"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2 text-left" for="email"
+            >Address</label
+          >
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            name=""
+            type="text"
+            required=""
+            placeholder="Address"
+            aria-label=""
+            v-model="email"
+          />
+        </div>
+      </div>
+      <p class="font-general-regular text-gray-500 text-md text-left mt-8 mb-4">
+        Education____________
+      </p>
+      <div
+        class="font-general-regular grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-8"
+      >
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name"
+            >Highest Level of Education
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Highest Level of Education"
+            aria-label="Highest Level of Education"
           />
         </div>
 
-        <!-- <div>
-          <label class="block text-lg text-primary-dark mb-2" for="message"
-            >Message</label
-          >
-          <textarea
-            class="w-full px-5 py-2 border border-primary-300 border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
-            name="message"
-            cols="14"
-            rows="6"
-            aria-label="Message"
-            v-model="message"
-          ></textarea>
-        </div> -->
-        <input class="bg-primary p-8 py-2" type="submit" value="Send" />
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name">Program </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Program"
+            aria-label="Program"
+            v-model="from_name"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name"
+            >Field of Study
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Field of Study"
+            aria-label="Field of Study"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name">Location </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Location"
+            aria-label="Location"
+          />
+        </div>
+      </div>
 
-        <!-- <div>
+      <p class="font-general-regular text-gray-500 text-md text-left mt-8 mb-4">
+        Work Experience____________
+      </p>
+
+      <div
+        class="font-general-regular grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-8"
+      >
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name"
+            >Occupation
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Occupation"
+          />
+        </div>
+
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name"
+            >Employment Type
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Employment Type"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name"
+            >Job Start Year
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Job Start Year"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name"
+            >Job End Year
+          </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Job End Year"
+          />
+        </div>
+        <div>
+          <label class="block text-lg text-primary-dark mb-2" for="name">Location </label>
+          <input
+            class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
+            id="name"
+            name="name"
+            type="text"
+            required=""
+            placeholder="Location"
+          />
+        </div>
+      </div>
+      <input class="bg-primary p-8 py-2 mt-8" type="submit" value="Submit" />
+
+      <!-- <div>
 					<Button
 						title="Send Message"
 						class="px-4 py-2.5 text-white tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg duration-500"
@@ -283,8 +314,7 @@ export default {
 						value="submit"
 					/>
 				</div> -->
-      </form>
-    </div>
+    </form>
   </div>
 </template>
 
