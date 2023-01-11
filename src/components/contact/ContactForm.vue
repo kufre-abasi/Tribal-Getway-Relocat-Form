@@ -169,7 +169,7 @@ export default {
           />
         </div>
       </div>
-      <p class="font-general-regular text-gray-500 text-md text-left mt-8 mb-4">
+      <p class="font-general-regular text-gray-500 text-md text-left mt-10 mb-4">
         Education____________
       </p>
       <div
@@ -231,7 +231,7 @@ export default {
         </div>
       </div>
 
-      <p class="font-general-regular text-gray-500 text-md text-left mt-8 mb-4">
+      <p class="font-general-regular text-gray-500 text-md text-left mt-10 mb-4">
         Work Experience____________
       </p>
 
