@@ -176,7 +176,7 @@ export default {
         class="font-general-regular grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-8"
       >
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name"
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
             >Highest Level of Education
           </label>
           <input
@@ -191,7 +191,9 @@ export default {
         </div>
 
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name">Program </label>
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
+            >Program
+          </label>
           <input
             class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
             id="name"
@@ -204,7 +206,7 @@ export default {
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name"
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
             >Field of Study
           </label>
           <input
@@ -218,7 +220,9 @@ export default {
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name">Location </label>
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
+            >Location
+          </label>
           <input
             class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
             id="name"
@@ -239,7 +243,7 @@ export default {
         class="font-general-regular grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 mt-6 sm:gap-8"
       >
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name"
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
             >Occupation
           </label>
           <input
@@ -253,7 +257,7 @@ export default {
         </div>
 
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name"
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
             >Employment Type
           </label>
           <input
@@ -266,7 +270,7 @@ export default {
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name"
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
             >Job Start Year
           </label>
           <input
@@ -279,7 +283,7 @@ export default {
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name"
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
             >Job End Year
           </label>
           <input
@@ -292,7 +296,9 @@ export default {
           />
         </div>
         <div>
-          <label class="block text-lg text-primary-dark mb-2" for="name">Location </label>
+          <label class="block text-lg text-primary-dark text-left mb-2" for="name"
+            >Location
+          </label>
           <input
             class="w-full px-5 py-2 border border-primary border-opacity-50 bg-opacity-50 text-secondary-light bg-primary-light rounded-md text-md"
             id="name"
